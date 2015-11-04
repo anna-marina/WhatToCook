@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MainActivity</string>
+    <string name="hello_world">HelloWorld</string>
+
+    <string-array name="categories_view">
+        <item>Овощи и зелень</item>
+        <item>Фрукты и ягоды</item>
+        <item>Крупы</item>
+        <item>Молочные продукты</item>
+        <item>Мясные продукты</item>
+        <item>Морепродукты</item>
+        <item>Мучное</item>
+        <item>Напитки</item>
+        <item>Другое</item>
+    </string-array>
+
+    <string-array name="categories_name">
+        <item>vegetables</item>
+        <item>fruits</item>
+        <item>cereals</item>
+        <item>milk</item>
+        <item>meat</item>
+        <item>seafood</item>
+        <item>flour</item>
+        <item>drinks</item>
+        <item>other</item>
+    </string-array>
+
+    <string-array name="vegetables">
+        <item>Баклажаны</item>
+        <item>Бобы</item>
+        <item>Брюква</item>
+        <item>Горох</item>
+        <item>Грецкий орех</item>
+        <item>Дыня</item>
+        <item>Зелень</item>
+        <item>Кабачки</item>
+        <item>Каперсы</item>
+        <item>Капуста квашеная</item>
+        <item>Капуста свежая</item>
+        <item>Картофель</item>
+        <item>Кольраби</item>
+        <item>Кукуруза</item>
+        <item>Лук зеленый</item>
+        <item>Лук репчатый</item>
+        <item>Маслины</item>
+        <item>Морковь</item>
+        <item>Мускатный орех</item>
+        <item>Огурцы</item>
+        <item>Паприка</item>
+        <item>Перец</item>
+        <item>Помидоры/Томатная паста</item>
+        <item>Редиска</item>
+        <item>Репа</item>
+        <item>Салат</item>
+        <item>Свекла</item>
+        <item>Сельдерей</item>
+        <item>Спаржа</item>
+        <item>Тыква</item>
+        <item>Фасоль</item>
+        <item>Хрен</item>
+        <item>Цукини</item>
+        <item>Черемша</item>
+        <item>Чеснок</item>
+        <item>Шпинат</item>
+        <item>Щавельх</item>
+    </string-array>
+
+    <string-array name="fruits">
+        <item>Абрикосы</item>
+        <item>Авокадо</item>
+        <item>Ананас</item>
+        <item>Апельсины</item>
+        <item>Арбуз</item>
+        <item>Бананы</item>
+        <item>Брусника</item>
+        <item>Бузина</item>
+        <item>Виноград</item>
+        <item>Вишня</item>
+        <item>Гранаты</item>
+        <item>Груши</item>
+        <item>Ежевика</item>
+        <item>Изюм</item>
+        <item>Калина</item>
+        <item>Клубника</item>
+        <item>Клюква</item>
+        <item>Кокос</item>
+        <item>Крыжовник</item>
+        <item>Курага</item>
+        <item>Лимон</item>
+        <item>Малина</item>
+        <item>Мандарины</item>
+        <item>Персик</item>
+        <item>Рябина</item>
+        <item>Сливы</item>
+        <item>Смородина</item>
+        <item>Черника</item>
+        <item>Яблоки</item>
+    </string-array>
+
+    <string-array name="cereals">
+        <item>Геркулес</item>
+        <item>Крупа гречневая</item>
+        <item>Крупа манная</item>
+        <item>Крупа перловая</item>
+        <item>Крупа ячневая</item>
+        <item>Пшено</item>
+        <item>Рис</item>
+        <item>Саго</item>
+        <item>Чечевица</item>
+    </string-array>
+
+    <string-array name="milk">
+        <item>Брынза</item>
+        <item>Масло сливочное</item>
+        <item>Молоко</item>
+        <item>Мороженое</item>
+        <item>Пармезан</item>
+        <item>Сметана</item>
+        <item>Сыр</item>
+        <item>Творог</item>
+    </string-array>
+
+    <string-array name="meat">
+        <item>Ветчина</item>
+        <item>Колбаса</item>
+        <item>Говядина</item>
+        <item>Индейка</item>
+        <item>Курица</item>
+        <item>Свинина</item>
+    </string-array>
+
+    <string-array name="seafood">
+        <item>Анчоусы</item>
+        <item>Икра</item>
+        <item>Крабовые палочки</item>
+        <item>Креветки</item>
+        <item>Мидии</item>
+        <item>Рыба белая</item>
+        <item>Рыба красная</item>
+        <item>Устрицы</item>
+    </string-array>
+
+    <string-array name="flour">
+        <item>Вермишель</item>
+        <item>Лапша</item>
+        <item>Макароны</item>
+        <item>Мука пшеничная</item>
+        <item>Мука цельнозерновая</item>
+        <item>Спагетти</item>
+        <item>Хлеб белый</item>
+        <item>Хлеб цельнозерновой</item>
+    </string-array>
+
+    <string-array name="drinks">
+        <item>Вино</item>
+        <item>Водка</item>
+        <item>Коньяк</item>
+        <item>Ликер</item>
+        <item>Пиво</item>
+    </string-array>
+
+    <string-array name="other">
+        <item>Грибы</item>
+        <item>Дрожжи</item>
+        <item>Какао</item>
+        <item>Кофе</item>
+        <item>Мак</item>
+        <item>Масло растительное</item>
+        <item>Мед</item>
+        <item>Сахар</item>
+        <item>Сода</item>
+        <item>Чай</item>
+        <item>Шоколад</item>
+        <item>Яйца</item>
+    </string-array>
+</resources>
