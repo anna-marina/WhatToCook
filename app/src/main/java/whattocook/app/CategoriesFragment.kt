@@ -24,7 +24,7 @@ class CategoriesFragment : Fragment() {
             val mLayoutManager = LinearLayoutManager(activity)
             mRecyclerView!!.layoutManager = mLayoutManager
 
-            val mAdapter = CategoryRecyclerAdapter(myDataset, activity)
+            val mAdapter = CategoryRecyclerAdapter(activity)
             mRecyclerView!!.adapter = mAdapter
 
             mRecyclerView!!.addItemDecoration(

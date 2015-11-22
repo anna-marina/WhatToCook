@@ -5,6 +5,17 @@
     <string name="action_settings">Settings</string>
     <string name="not_found">Рецепты не найдены</string>
 
+    <string name="cat_fruit">Фрукты</string>
+    <string name="cat_vegetables">Овощи</string>
+
+    <string name="it_apple">Яблоко</string>
+    <string name="it_banana">Банан</string>
+    <string name="it_pineapple">Ананас</string>
+
+    <string name="it_cucumber">Огурец</string>
+    <string name="it_tomato">Помидор</string>
+    <string name="it_potato">Картофель</string>
+
     <string-array name="categories_view">
         <item>Овощи и зелень</item>
         <item>Фрукты и ягоды</item>

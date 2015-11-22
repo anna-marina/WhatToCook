@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 class CategoryRecyclerAdapter// Конструктор
-(private val mDataset: Array<String>, private  val mActivity: Activity) :
+(private  val mActivity: Activity) :
         RecyclerView.Adapter<CategoryRecyclerAdapter.CategoryViewHolder>() {
 
     var cts: Array<String>? = null
@@ -34,7 +34,7 @@ class CategoryRecyclerAdapter// Конструктор
         // наш пункт состоит только из одного TextView
         var mTextView: TextView
         var chView: BulletView
-        var mCategory: String = ""
+        var mCategory: Category? = null
 
         init {
             itemView.isClickable = true
@@ -59,13 +59,13 @@ class CategoryRecyclerAdapter// Конструктор
 
     // Заменяет контент отдельного view (вызывается layout manager-ом)
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.mCategory = cts!![position]
-        holder.mTextView.text = mDataset[position]
+        holder.mCategory = FoodIndex.categories[position]
+        holder.mTextView.text = holder.mCategory?.display
 
     }
 
     // Возвращает размер данных (вызывается layout manager-ом)
     override fun getItemCount(): Int {
-        return mDataset.size
+        return FoodIndex.categories.size
     }
 }

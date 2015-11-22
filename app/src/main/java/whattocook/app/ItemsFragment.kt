@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class ItemsFragment(val cName: String): Fragment() {
+class ItemsFragment(val cat: Category?): Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?,
                               container: ViewGroup?,
@@ -22,11 +22,10 @@ class ItemsFragment(val cName: String): Fragment() {
 
            /* val dataId = resources.getIdentifier(cName, "array", activity.packageName)
             val myDataset = resources.getStringArray(dataId)*/
-            val myDataset = FoodIndex.getArray(cName)!!
             val mLayoutManager = LinearLayoutManager(activity)
             mRecyclerView!!.layoutManager = mLayoutManager
 
-            val mAdapter = ItemRecyclerAdapter(cName, myDataset)
+            val mAdapter = ItemRecyclerAdapter(cat)
             mRecyclerView!!.adapter = mAdapter
 
             mRecyclerView!!.addItemDecoration(

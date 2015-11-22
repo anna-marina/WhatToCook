@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 class ItemRecyclerAdapter// Конструктор
-(private val cname: String, private val mDataset: Array<String>) :
+(private val cat: Category?) :
         RecyclerView.Adapter<ItemRecyclerAdapter.ItemViewHolder>() {
 
     // класс view holder-а с помощью которого мы получаем ссылку на каждый элемент
@@ -21,7 +21,7 @@ class ItemRecyclerAdapter// Конструктор
     private inner class ItemViewHolder(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
         override fun onClick(v: View) {
             chView.toggle()
-            FoodIndex.toggle(cname, index)
+            cat!!.subItems[index].toggle()
         }
 
         // наш пункт состоит только из одного TextView
@@ -30,12 +30,12 @@ class ItemRecyclerAdapter// Конструктор
         public var index: Int = 0
             set(i) {
                 field = i
-                if (FoodIndex.getChecked(cname, index))
+                if (cat!!.subItems[i].selected)
                     chView.set()
                 else
                     chView.unset()
             }
-        public var cname: String = ""
+        public var cat: Category? = null
 
         init {
             itemView.isClickable = true
@@ -59,13 +59,13 @@ class ItemRecyclerAdapter// Конструктор
 
     // Заменяет контент отдельного view (вызывается layout manager-ом)
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.cname = cname
+        holder.cat = cat
         holder.index = position
-        holder.mTextView.text = mDataset[position]
+        holder.mTextView.text = cat!!.subItems[position].display
     }
 
     // Возвращает размер данных (вызывается layout manager-ом)
     override fun getItemCount(): Int {
-        return mDataset.size
+        return cat!!.subItems.size
     }
 }

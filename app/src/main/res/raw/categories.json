@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "cat_fruits",
+    "name": "cat_fruit",
     "items":
             [
               {"id": 0, "name": "it_apple"},
