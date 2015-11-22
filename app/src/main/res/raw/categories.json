@@ -14,9 +14,9 @@
     "name": "cat_vegetables",
     "items":
             [
-              {"id": 0, "name": "it_cucumber"},
-              {"id": 1, "name": "it_tomato"},
-              {"id": 2, "name": "it_potato"}
+              {"id": 3, "name": "it_cucumber"},
+              {"id": 4, "name": "it_tomato"},
+              {"id": 5, "name": "it_potato"}
             ]
   }
 ]

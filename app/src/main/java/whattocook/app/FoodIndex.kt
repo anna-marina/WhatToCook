@@ -1,9 +1,10 @@
 package whattocook.app
 
-import android.app.Activity
-import android.app.Application
 import android.content.Context
 import android.content.res.Resources
+import org.json.JSONArray
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.util.*
 
 object FoodIndex {
@@ -13,10 +14,54 @@ object FoodIndex {
             field = c
             res = context?.resources
             x = HashMap()
+            fetchCategories()
         }
     private var res: Resources? = null
     private var x: HashMap<String, BooleanArray> = HashMap()
     public  var allItems = LinkedList<String>()
+    public  var categories = arrayOf<Category>()
+
+    private fun fetchCategories() {
+        val inputStream = res?.openRawResource(R.raw.categories);
+        val br = BufferedReader(InputStreamReader(inputStream))
+        var res = ""
+        while (true) {
+            val line = br.readLine()
+            if (line != null)
+                res += line + '\n';
+            else
+                break;
+        }
+        buildCategories(res)
+    }
+
+    private fun buildCategories(json: String) {
+        val jsonCategories = JSONArray(json)
+        var categoryList: List<Category> = LinkedList()
+        for (i in 0..jsonCategories.length() - 1) {
+            val jsonCategory = jsonCategories.getJSONObject(i)
+            val jsonItems = jsonCategory.optJSONArray("items")
+            var itemList: List<Item> = LinkedList()
+            for (j in 0..jsonItems.length() - 1) {
+                val jsonItem = jsonItems.getJSONObject(j)
+                val itemId = jsonItem.getInt("id")
+                val itemName = jsonItem.getString("name")
+                itemList += Item(itemId, itemName)
+            }
+            val itemArray = itemList.toTypedArray()
+            val categoryId = jsonCategory.getInt("id")
+            val categoryName = jsonCategory.getString("name")
+            categoryList += Category(categoryId, categoryName, itemArray)
+        }
+        categories = categoryList.toTypedArray()
+    }
+
+    public fun getDisplayName(name: String): String? {
+        val id = res?.getIdentifier(name, "string", context?.packageName)
+        if (id != null)
+            return res?.getString(id)
+        return null
+    }
 
     public fun getArray(name: String): Array<String>? {
         val id = res?.getIdentifier(name, "array", context?.packageName)
