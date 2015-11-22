@@ -10,11 +10,8 @@ import android.view.View
 
 class DividerItemDecoration : RecyclerView.ItemDecoration {
 
-    private var mDivider: Drawable? = null
+    private val mDivider: Drawable
 
-    /**
-     * Default divider will be used
-     */
     constructor(context: Context) {
         val styledAttributes = context.obtainStyledAttributes(ATTRS)
         mDivider = styledAttributes.getDrawable(0)
@@ -42,10 +39,10 @@ class DividerItemDecoration : RecyclerView.ItemDecoration {
             val params = child.layoutParams as RecyclerView.LayoutParams
 
             val top = child.bottom + params.bottomMargin
-            val bottom = top + mDivider!!.intrinsicHeight
+            val bottom = top + mDivider.intrinsicHeight
 
-            mDivider!!.setBounds(left, top, right, bottom)
-            mDivider!!.draw(c)
+            mDivider.setBounds(left, top, right, bottom)
+            mDivider.draw(c)
 
             /*
             int diff = 10;

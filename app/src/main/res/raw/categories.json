@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "cat_fruits",
+    "items":
+            [
+              {"id": 0, "name": "it_apple"},
+              {"id": 1, "name": "it_banana"},
+              {"id": 2, "name": "it_pineapple"}
+            ]
+  },
+  {
+    "id": 1,
+    "name": "cat_vegetables",
+    "items":
+            [
+              {"id": 0, "name": "it_cucumber"},
+              {"id": 1, "name": "it_tomato"},
+              {"id": 2, "name": "it_potato"}
+            ]
+  }
+]
