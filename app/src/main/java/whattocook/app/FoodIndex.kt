@@ -19,7 +19,7 @@ object FoodIndex {
     private var res: Resources? = null
     private var x: HashMap<String, BooleanArray> = HashMap()
     public  var allItems = LinkedList<String>()
-    public  var categories = arrayOf<Category>()
+    public  var categories = arrayOf<Category>(); private set
 
     private fun fetchCategories() {
         val inputStream = res?.openRawResource(R.raw.categories);
@@ -40,15 +40,15 @@ object FoodIndex {
         var categoryList: List<Category> = LinkedList()
         for (i in 0..jsonCategories.length() - 1) {
             val jsonCategory = jsonCategories.getJSONObject(i)
-            val jsonItems = jsonCategory.optJSONArray("items")
-            var itemList: List<Item> = LinkedList()
-            for (j in 0..jsonItems.length() - 1) {
-                val jsonItem = jsonItems.getJSONObject(j)
-                val itemId = jsonItem.getInt("id")
-                val itemName = jsonItem.getString("name")
-                itemList += Item(itemId, itemName)
+            val jsonFoods = jsonCategory.optJSONArray("items")
+            var foodList: List<Food> = LinkedList()
+            for (j in 0..jsonFoods.length() - 1) {
+                val jsonFood = jsonFoods.getJSONObject(j)
+                val itemId = jsonFood.getInt("id")
+                val itemName = jsonFood.getString("name")
+                foodList += Food(itemId, itemName, false)
             }
-            val itemArray = itemList.toTypedArray()
+            val itemArray = foodList.toTypedArray()
             val categoryId = jsonCategory.getInt("id")
             val categoryName = jsonCategory.getString("name")
             categoryList += Category(categoryId, categoryName, itemArray)
