@@ -14,11 +14,18 @@ class RecipesActivity : AppCompatActivity() {
         var myToolbar = findViewById(R.id.my_toolbar) as Toolbar
         setSupportActionBar(myToolbar)
 
-        if (savedInstanceState == null) {
-            fragmentManager.beginTransaction()
-                    .add(R.id.frag_content, RecipesFragment())
-                    .commit()
-        }
+        val found = FoodIndex.composeRecipes()
+
+        val tr = fragmentManager.beginTransaction()
+        val frag =
+            if (found.size == 0)
+                NoResultsFragment()
+            else
+                RecipesFragment(found)
+        if (savedInstanceState == null)
+            tr.add(R.id.frag_content, frag).commit()
+        else
+            tr.replace(R.id.frag_content, frag).commit()
     }
 
     public override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-class RecipeRecyclerAdapter:
+class RecipeRecyclerAdapter(val recipes: Array<Recipe>):
         RecyclerView.Adapter<RecipeRecyclerAdapter.ItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder? {
@@ -17,12 +17,12 @@ class RecipeRecyclerAdapter:
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return recipes.size
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.head.text = "Яичница с помидорами"
-        holder.recipe.text = FoodIndex.allItems.joinToString(", ")
+        holder.head.text = recipes[position].title
+        holder.recipe.text = recipes[position].actions
     }
 
     private inner class ItemViewHolder(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {

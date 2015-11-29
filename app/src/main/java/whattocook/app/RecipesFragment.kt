@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class RecipesFragment: Fragment() {
+class RecipesFragment(val recipes: Array<Recipe>): Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -22,7 +22,7 @@ class RecipesFragment: Fragment() {
         mRecyclerView.setHasFixedSize(true)
         val mLayoutManager = LinearLayoutManager(activity)
         mRecyclerView.layoutManager = mLayoutManager
-        val mAdapter = RecipeRecyclerAdapter()
+        val mAdapter = RecipeRecyclerAdapter(recipes)
         mRecyclerView.adapter = mAdapter
 
         return v

@@ -13,16 +13,16 @@ object FoodIndex {
         set(c) {
             field = c
             res = context?.resources
-            x = HashMap()
+            sel = HashSet()
             fetchCategories()
         }
     private var res: Resources? = null
-    private var x: HashMap<String, BooleanArray> = HashMap()
+    private var sel: Set<Int> = HashSet()
     public  var allItems = LinkedList<String>()
     public  var categories = arrayOf<Category>(); private set
 
-    private fun fetchCategories() {
-        val inputStream = res?.openRawResource(R.raw.categories);
+    private fun readRaw(id: Int): String {
+        val inputStream = res?.openRawResource(id);
         val br = BufferedReader(InputStreamReader(inputStream))
         var res = ""
         while (true) {
@@ -32,7 +32,11 @@ object FoodIndex {
             else
                 break;
         }
-        buildCategories(res)
+        return res
+    }
+
+    private fun fetchCategories() {
+        buildCategories(readRaw(R.raw.categories))
     }
 
     private fun buildCategories(json: String) {
@@ -61,5 +65,34 @@ object FoodIndex {
         if (id != null)
             return res?.getString(id)
         return null
+    }
+
+    public fun add(id: Int) {
+        sel += id
+    }
+
+    public fun remove(id: Int) {
+        sel -= id
+    }
+
+    public fun composeRecipes(): Array<Recipe> {
+        val jsonRecipes = JSONArray(readRaw(R.raw.recipes))
+        var recipesList: List<Recipe> = LinkedList()
+        for (i in 0..jsonRecipes.length() - 1) {
+            val jsonRecipe = jsonRecipes.getJSONObject(i)
+            val jsonRecipeIn = jsonRecipe.getJSONArray("ingridients")
+            var recipeIn: List<Int> = LinkedList()
+            for (j in 0..jsonRecipeIn.length() - 1)
+                recipeIn += jsonRecipeIn.getInt(j)
+            if (!sel.containsAll(recipeIn))
+                continue
+            val recipeInA = recipeIn.toTypedArray()
+            val recipeTitle = jsonRecipe.getString("title")
+            val recipePrep = jsonRecipe.getString("preparation")
+            val recipeAct = jsonRecipe.getString("actions")
+            val recipe = Recipe(recipeInA, recipeTitle, recipePrep, recipeAct)
+            recipesList += recipe
+        }
+        return recipesList.toTypedArray()
     }
 }

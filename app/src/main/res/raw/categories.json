@@ -3,20 +3,34 @@
     "id": 0,
     "name": "cat_fruit",
     "items":
-            [
-              {"id": 0, "name": "it_apple"},
-              {"id": 1, "name": "it_banana"},
-              {"id": 2, "name": "it_pineapple"}
-            ]
+    [
+      {"id": 0, "name": "it_apple"},
+      {"id": 1, "name": "it_banana"},
+      {"id": 2, "name": "it_pineapple"}
+    ]
   },
   {
     "id": 1,
     "name": "cat_vegetables",
     "items":
-            [
-              {"id": 3, "name": "it_cucumber"},
-              {"id": 4, "name": "it_tomato"},
-              {"id": 5, "name": "it_potato"}
-            ]
+    [
+      {"id": 3, "name": "it_potato"},
+      {"id": 4, "name": "it_beet"},
+      {"id": 5, "name": "it_saltcucumber"},
+      {"id": 6, "name": "it_bulbonion"},
+      {"id": 7, "name": "it_carrot"}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "cat_other",
+    "items":
+    [
+      {"id": 8, "name": "it_oliveoil"},
+      {"id": 9, "name": "it_sugar"},
+      {"id": 10, "name": "it_salt"},
+      {"id": 11, "name": "it_balsamicvinegar"},
+      {"id": 12, "name": "it_blackpepper"}
+    ]
   }
 ]
