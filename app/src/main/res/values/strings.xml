@@ -7,6 +7,7 @@
 
     <string name="cat_fruit">Фрукты</string>
     <string name="cat_vegetables">Овощи</string>
+    <string name="cat_milk">Молочные продукты</string>
     <string name="cat_other">Другое</string>
 
     <string name="it_apple">Яблоко</string>
@@ -14,18 +15,23 @@
     <string name="it_pineapple">Ананас</string>
 
     <string name="it_cucumber">Огурец</string>
-    <string name="it_tomato">Помидор</string>
     <string name="it_potato">Картофель</string>
     <string name="it_beet">Свекла</string>
     <string name="it_saltcucumber">Соленый огурец</string>
     <string name="it_carrot">Морковь</string>
     <string name="it_bulbonion">Лук репчатый</string>
+    <string name="it_tomato">Помидор</string>
+
+    <string name="it_yogurt">Йогурт</string>
+    <string name="it_milk">Молоко</string>
+    <string name="it_cheese">Сыр</string>
 
     <string name="it_oliveoil">Масло оливковое</string>
     <string name="it_sugar">Сахар</string>
     <string name="it_salt">Соль</string>
     <string name="it_balsamicvinegar">Бальзамический уксус</string>
     <string name="it_blackpepper">Перец черный молотый</string>
+    <string name="it_eggs">Яйца</string>
 
     <string-array name="categories_view">
         <item>Овощи и зелень</item>

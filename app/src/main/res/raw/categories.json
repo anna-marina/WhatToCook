@@ -18,19 +18,31 @@
       {"id": 4, "name": "it_beet"},
       {"id": 5, "name": "it_saltcucumber"},
       {"id": 6, "name": "it_bulbonion"},
-      {"id": 7, "name": "it_carrot"}
+      {"id": 7, "name": "it_carrot"},
+      {"id": 8, "name": "it_tomato"}
     ]
   },
   {
     "id": 2,
+    "name": "cat_milk",
+    "items":
+    [
+      {"id": 9, "name": "it_yogurt"},
+      {"id": 10, "name": "it_milk"},
+      {"id": 11, "name": "it_cheese"}
+    ]
+  },
+  {
+    "id": 3,
     "name": "cat_other",
     "items":
     [
-      {"id": 8, "name": "it_oliveoil"},
-      {"id": 9, "name": "it_sugar"},
-      {"id": 10, "name": "it_salt"},
-      {"id": 11, "name": "it_balsamicvinegar"},
-      {"id": 12, "name": "it_blackpepper"}
+      {"id": 12, "name": "it_oliveoil"},
+      {"id": 13, "name": "it_sugar"},
+      {"id": 14, "name": "it_salt"},
+      {"id": 15, "name": "it_balsamicvinegar"},
+      {"id": 16, "name": "it_blackpepper"},
+      {"id": 17, "name": "it_eggs"}
     ]
   }
 ]
